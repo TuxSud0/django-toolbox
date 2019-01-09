@@ -1,0 +1,15 @@
+<cli>
+select client
+select site
+enter project #
+
+<script>
+mkdir [client]/[site]/[project_no]
+cd ^
+django-admin startproject [client_prefix + project no]
+django-admin startapp []
+cp empty_project/app directory to new proj
+add initial superuser to auth_users
+....
+</script>
+

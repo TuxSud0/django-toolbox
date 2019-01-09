@@ -1,0 +1,28 @@
+from django.contrib import admin
+from .models import Definition, Package
+
+class DefinitionAdmin(admin.ModelAdmin):
+    list_display = ('id', 'tag','name')
+    list_filter = ('id', 'tag','name')
+    
+
+	
+class PackageAdmin(admin.ModelAdmin):
+    list_display = ('id', 'number','name')
+    list_filter = ('id', 'number','name')
+
+	
+	
+admin.site.register(Definition, DefinitionAdmin)
+admin.site.register(Package, PackageAdmin)
+
+'''    
+fieldsets = (
+        ('Equipment', {
+            'fields': ('tag','name',)
+            
+        })
+    )
+	
+	#readonly_fields = ('username','submitted',)
+'''

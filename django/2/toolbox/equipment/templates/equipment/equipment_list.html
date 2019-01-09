@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}All Quotes{% endblock title %}
+
+{% block content %}
+<h1>All Equipment</h1>
+
+<table style="border-collapse:collapse">
+    <tr class="quotehdr">
+    <th>Tag</th>
+	<th>Name</th>
+	<th>Type</th>
+	<th>Field</th>
+	<th>Field</th>
+	<th>Field</th>
+    <th>Last Modified</th>
+	<th>By</th>
+	
+
+    </tr>
+    {% for equipment in equipment %}
+        <tr class="quoterow {% cycle '' 'altrow' %}">
+            <td><a href="equipment_details/{{ equipment.tag }}">{{ equipment.tag }}</a></td>
+            <td>{{ equipment.name }}</td>
+			<td> equipment.type </td>
+
+							<td>
+					<a href="equipment_details/{{ equipment.tag }}">Document Index
+					</a>
+				</td>
+				<td >
+					<a href="equipment_details/{{ equipment.tag }}">Datasheet
+					</a>
+				</td>
+				<td >
+					<a href="equipment_details/{{ equipment.tag }}">Drawing
+					</a>
+								<td>{{ equipment.submitted }}</td>
+			<td>{{ equipment.username }}</td>
+
+        </tr>
+
+    {% endfor %}
+</table>
+{% endblock content %}
