@@ -7,15 +7,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Equipment
+from equipment.models import Definition
 #from .forms import ProjectForm
 #from pages.models import Page
 
 class EquipmentList(ListView):
-	model = Equipment
+	model = Definition
 	context_object_name = 'equipment'
 
 	def get_context_data(self, **kwargs):
 		context = super(EquipmentList, self).get_context_data(**kwargs)
-		context['equipment'] = Equipment.objects.all()
+		context['equipment'] = EquipmentList.objects.all()
 		return context

@@ -14,5 +14,5 @@ class Equipment_Type(models.Model):
     type = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
-        return str(self.code)
+        return str(self.type)
 
