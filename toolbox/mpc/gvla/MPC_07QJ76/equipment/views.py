@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
@@ -15,7 +16,7 @@ class EquipmentList(ListView):
 	model = Definition
 	context_object_name = 'equipment'
 
-	def get_context_data(self, **kwargs):
-		context = super(EquipmentList, self).get_context_data(**kwargs)
-		context['equipment'] = EquipmentList.objects.all()
-		return context
+	#def get_context_data(self, **kwargs):
+	#	context = super(EquipmentList, self).get_context_data(**kwargs)
+	#	context['equipment'] = EquipmentList.objects.all()
+	#		return context

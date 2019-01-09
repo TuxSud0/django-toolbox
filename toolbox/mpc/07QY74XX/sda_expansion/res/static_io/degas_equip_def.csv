@@ -1,0 +1,19 @@
+﻿1,144-1101,Degassing Contactor,312,R12-0002
+2,144-1101-PACKING,Degassing Contactor Packing,312,R12-0003
+3,144-1201,Degassing Feed Surge Drum,313,R13-0001
+4,144-1202,Condensate Flash Drum,313,R13-0001
+5,144-1203,Air Receiver,313,R13-0001
+6,144-1301,Sulfur Cooler,311,R11-0004
+7,144-1302,Steam Condenser,311,R11-0005
+8,144-1501-01,Degassing Feed Pump,301,R01-0002
+9,144-1501-02,Degassing Feed Pump,301,R01-0002
+10,144-1502-01,Oil Water Sump Pump,301,R01-0004
+11,144-1502-02,Oil Water Sump Pump,301,R01-0004
+12,144-1503-01,Condensate Pump,301,R01-0003
+13,144-1503-02,Condensate Pump,301,R01-0003
+14,144-1801-01,Process Air Compressor,302,R02-0001
+15,144-1801-02,Process Air Compressor,302,R02-0001
+16,144-2801,Dry Air Package,302,R02-0001
+17,20-1404A,Claus Burner Components,317,R17-0003
+18,34-1404A,Claus Burner Components,317,R17-0003
+19,45-1404A,Claus Burner Components,317,R17-0003
