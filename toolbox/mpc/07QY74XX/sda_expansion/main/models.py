@@ -2,23 +2,9 @@ from django.db import models
 #from django.contrib.auth.models import User
 
 PROJECT_NAME = 'Sulfur Reliability'
-PROJECT_NUMBER_BASE = '07OT89'
+PROJECT_NUMBER_BASE = '07QY74'
 PROJECT_SITE = 'Garyville, LA'
 STATIC_DEF = {}
-WBS_CODES = [
-('020','020'),
-('050','050'),
-	('060','060'),
-	('120','120'),
-	('300','300'),
-	('301','301'),
-	('302','302'),
-	('303','303'),
-	('306','306'),
-	('311','311'),
-	('312','312'),
-	('313','313'),
-]
 WBS_DEF = {
 	"020": "COORDINATION",
 	"050": "FIELD TRIPS",
@@ -86,12 +72,31 @@ class Definition(models.Model):
 	wbs_d = {}
 	i = 0
 	while i < len(wbs_keys):
-		wbs_d[wbs_keys[i]]= str(wbs_keys[i]) + " - " + str(WBS_DEF.get(wbs_keys[i]))
+		wbs_d[wbs_keys[i]]= str(wbs_keys[i]) #+ " - " + str(WBS_DEF.get(wbs_keys[i]))
 		i+=1
 	wbs_choices = list(wbs_d.items())
+	
+	E = 'Heat Exchanger'
+	G = 'Pump'
+	D = 'Vessel'
+	EJ = 'Ejector'
+	MISC = 'MISC'
+	eq_class_choices = [
+		('E',E),
+		('G',G),
+		('D',D),
+		('EJ',EJ)
+	]
+	bat_lim_choices = [('ISBL','ISBL'),('OSBL','OSBL')]
 	tag = models.CharField(primary_key=True, max_length=20)
 	desc = models.CharField(max_length=50, blank=True, null=True)
 	wbs = models.CharField(choices=wbs_choices,max_length=5)
+	pkg = models.CharField(max_length=50, blank=True, null=True)
+	est_group = models.CharField(max_length=50, blank=True, null=True)
+	bat_lim = models.CharField(choices=bat_lim_choices,max_length=5, null=True)
+	pid = models.CharField(max_length=50, blank=True, null=True)
+	pfd = models.CharField(max_length=50, blank=True, null=True)
+	eq_class = models.CharField(choices=eq_class_choices, max_length=20,null=True)
 	#wbs2 = models.ForeignKey(
 	#	'Wbs',
 	#	on_delete=
